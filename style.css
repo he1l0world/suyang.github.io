@@ -1,0 +1,42 @@
+head {
+
+	color: red;
+	font-family: Impact;
+	text-align: center;
+}
+
+
+body{
+	background-color: rgb(220, 220, 220);
+  	font-size: 20px;
+}
+
+.buttons{
+	width: 100%;
+	text-align: center;
+	border: solid 2px black;
+}
+
+.mainButton{
+	display: inline-block;
+	font-size: 30px;
+	color: rgb(10, 25,  50);
+	margin-left: 7%;
+	margin-right: 7%;
+	background-color: rgb(50, 150, 250);
+}
+
+.welcome{
+	text-align: center;
+	width: 100%;
+}
+.login{
+	margin-left: 5%;
+	
+}
+#LogIn{
+
+	font-size: 30px;
+	text-align: center;
+}
+

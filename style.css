@@ -1,3 +1,6 @@
+* {
+	box-sizing: border-box;
+}
 head {
 
 	color: red;
@@ -40,3 +43,11 @@ body{
 	text-align: center;
 }
 
+
+/*
+	when hover or active the buttons, make the background color red
+*/
+.buttons a:hover, a:active{
+	background-color: red;
+	cursor: pointer;
+}

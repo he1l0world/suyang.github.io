@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "ES6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "outDir": "./dist", // Prevent overwriting input files
+    "declaration": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts", "node_modules", "dist"]
+}

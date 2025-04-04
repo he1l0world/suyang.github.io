@@ -1,9 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/globalStore";
-import { createTheme } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import { Button, CardContent, TextField } from "@mui/material";
 
 interface AppThemeProps{
     children: React.ReactNode

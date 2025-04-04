@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export type ThemeType = 'system' | 'light' | 'dark';
+// export type ThemeType = 'system' | 'light' | 'dark';
+
+export const ThemeTypeOptions = {
+  System: 'system',
+  Light: 'light',
+  Dark: 'dark',
+};
+
+export type ThemeType =
+  (typeof ThemeTypeOptions)[keyof typeof ThemeTypeOptions];
 
 export type User = {
   id: string;

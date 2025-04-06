@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.hero-section-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.menu-card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105;
+}
+
+.menu-image {
+  @apply w-full h-56 object-cover transition-transform duration-500 hover:scale-110;
+}
+
+.price-tag {
+  @apply absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-lg font-bold text-indigo-600;
+}
+
+.cart-item {
+  @apply flex items-center space-x-4 p-6 bg-white rounded-lg shadow-sm border border-gray-100 transform transition-transform duration-200 hover:shadow-md;
+}
+
+.quantity-control {
+  @apply flex items-center space-x-3 bg-gray-50 rounded-lg px-3 py-2;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium 
+         transform transition-all duration-200 
+         hover:bg-indigo-700 hover:scale-105 
+         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium
+         transform transition-all duration-200
+         hover:bg-gray-200 
+         focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+}
+
+.nav-link {
+  @apply text-gray-700 font-medium transition-colors duration-200 
+         hover:text-indigo-600 relative after:absolute after:bottom-0 after:left-0 
+         after:w-full after:h-0.5 after:bg-indigo-600 after:scale-x-0 
+         after:transition-transform after:duration-200 
+         hover:after:scale-x-100;
+}
+
+.mobile-nav-link {
+  @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}

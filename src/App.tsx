@@ -1,18 +1,22 @@
-import LoginPage from './components/authentication/LoginPage';
-import { RootState } from './redux/globalStore';
-import { useSelector } from 'react-redux';
-import ThemeModeSelect from './components/home/ThemModeSelect';
 import AppTheme from './components/home/AppTheme';
+import NavBar from './components/home/NavBar';
+import HomePage from './components/home/HomePage';
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ProjectsPage from './components/home/ProjectsPage';
 
 const App = () => {
-  const theme = useSelector((state: RootState) => state.theme);
-
   return (
     <AppTheme>
-      <ThemeModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }}>
-        <LoginPage />
-      </ThemeModeSelect>
+      <BrowserRouter>
+        <div className='min-h-screen bg-gray-50 '>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='projects' element={<ProjectsPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </AppTheme>
   );
 };

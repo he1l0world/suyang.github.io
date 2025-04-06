@@ -1,12 +1,12 @@
 import { RootState } from '../../redux/globalStore';
-import { ThemeType, ThemeTypeOptions, setTheme } from '../../redux/globalReducer';
+import { setTheme, ThemeType, ThemeTypeOptions } from '../../redux/global/ThemeSlice';
 import Select, { SelectProps } from '@mui/material/Select';
 import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
 import { MenuItem } from '@mui/material';
 
 const ThemeModeSelect = (props: SelectProps) => {
-  const theme: ThemeType = useSelector((state: RootState) => state.theme);
+  const theme: ThemeType = useSelector((state: RootState) => state.theme.theme);
   const dispath = useDispatch();
 
   const handleChange = (event) =>

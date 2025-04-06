@@ -3,9 +3,9 @@ import globalStore from './redux/globalStore';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+// import './styles/home/index.css';
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(
+ReactDOM.createRoot(document.getElementById('app')!).render(
   <React.StrictMode>
     <Provider store={globalStore}>
       <App />

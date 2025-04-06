@@ -2,12 +2,21 @@
   "compilerOptions": {
     "jsx": "react",
     "target": "ES6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "outDir": "./dist", // Prevent overwriting input files
-    "declaration": true
+    "declaration": true,
+
+    // Linting 
+    // "strict": true,
+    // "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts", "node_modules", "dist"]

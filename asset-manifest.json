@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/www.dawson0xff.com/static/css/main.d83ce479.css",
+    "main.js": "/www.dawson0xff.com/static/js/main.a372535b.js",
+    "index.html": "/www.dawson0xff.com/index.html",
+    "main.d83ce479.css.map": "/www.dawson0xff.com/static/css/main.d83ce479.css.map",
+    "main.a372535b.js.map": "/www.dawson0xff.com/static/js/main.a372535b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d83ce479.css",
+    "static/js/main.a372535b.js"
+  ]
+}

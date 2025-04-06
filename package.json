@@ -1,7 +1,7 @@
 {
   "name": "dawson-personal-website",
   "version": "1.0.0",
-  "homepage": "www.dawson0xff.com",
+  "homepage": "http://www.dawson0xff.com",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

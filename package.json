@@ -1,7 +1,7 @@
 {
   "name": "dawson-personal-website",
   "version": "1.0.0",
-  "homepage": "http://www.dawson0xff.com",
+  "homepage": "https://www.dawson0xff.com",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -36,6 +36,8 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "lint": "eslint .",
+    "format-check": "prettier --check .",
+    "format-fix": "prettier --write .",
     "lint:fix": "eslint . --fix",
     "build": "react-scripts build",
     "predeploy": "npm run build",

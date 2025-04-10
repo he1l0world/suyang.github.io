@@ -15,7 +15,7 @@ const recipeSlice = createSlice({
       const newRecipe = action.payload;
       state.recipes.push(newRecipe);
     },
-    removeRecipe: (state, action: PayloadAction<string>) => {
+    removeRecipe: (state, action: PayloadAction<number>) => {
       const recipeId = action.payload;
       state.recipes = state.recipes.filter((recipe) => recipe.id !== recipeId);
     },

@@ -1,16 +1,14 @@
 export interface Recipe {
-  id: string;
+  id: number;
   name: string;
   description: string;
   price: number; // Price of the recipe
-  imageUrl?: string;
-  ingredients: string[];
-  instructions: string[];
-  prepTime?: number; // in minutes
-  cookTime?: number; // in minutes
-  servings?: number;
   cuisineType: string;
-  dietaryRestrictions: string[];
+  imageUrl?: string;
+  ingredients?: string[];
+  instructions?: string[];
+  prepTime?: string; // in minutes
+  dietaryRestrictions?: string[];
 }
 
 export interface RecipeState {
@@ -18,7 +16,7 @@ export interface RecipeState {
 }
 
 export interface CartItem {
-  recipeId: string; // ID of the recipe
+  recipeId: number; // ID of the recipe
   quantity: number; // Quantity of the recipe in the cart
   comments: string; // User comments or notes about the recipe
 }

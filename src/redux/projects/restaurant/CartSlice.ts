@@ -24,7 +24,7 @@ const cartSlice = createSlice({
       }
       state.totalPrice += quantity * (findRecipeById(recipeId)?.price ?? 0);
     },
-    removeFromCart: (state, action: PayloadAction<string>) => {
+    removeFromCart: (state, action: PayloadAction<number>) => {
       const recipeId = action.payload;
       state.items = state.items.filter((item) => item.recipeId !== recipeId);
     },

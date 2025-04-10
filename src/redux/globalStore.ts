@@ -1,15 +1,19 @@
-import recipesReducer from './restaurant/RecipesSlice';
-import cartReducer from './restaurant/CartSlice';
+import recipesReducer from './projects/restaurant/RecipesSlice';
+import cartReducer from './projects/restaurant/CartSlice';
 import userReducer from './global/UserSlice';
 import themeReducer from './global/ThemeSlice';
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+const projectReducer = combineReducers({
+  recipes: recipesReducer,
+  cart: cartReducer,
+});
 
 const globalStore = configureStore({
   reducer: {
     user: userReducer,
     theme: themeReducer,
-    recipe: recipesReducer,
-    cart: cartReducer,
+    project: projectReducer,
   },
 });
 

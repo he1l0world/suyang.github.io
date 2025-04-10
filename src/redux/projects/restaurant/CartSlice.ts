@@ -1,5 +1,5 @@
-import { CartItem, CartState } from '../../types/restaurant/types';
-import { findRecipeById } from '../../utils/restaurant/RestaurantUtils';
+import { CartItem, CartState } from '../../../types/restaurant/types';
+import { findRecipeById } from '../../../utils/restaurant/RestaurantUtils';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: CartState = {

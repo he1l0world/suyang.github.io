@@ -20,25 +20,15 @@ describe('restaurant utils', () => {
     },
   ];
 
-  //   beforeAll(() => {
-  //     jest.spyOn(globalStore, 'getState').mockReturnValue({
-  //       recipe: {
-  //         recipes: dummyRecipes,
-  //       },
-  //     } as RootState);
-  //   });
-
-  //   afterAll(() => {
-  //     jest.restoreAllMocks();
-  //   });
-
   beforeEach(() => {
     // Reset all mocks before each test
     jest.clearAllMocks();
     // Set up the mock state
     (globalStore.getState as jest.Mock).mockReturnValue({
-      recipe: {
-        recipes: dummyRecipes,
+      project: {
+        recipes: {
+          recipes: dummyRecipes,
+        },
       },
     } as RootState);
   });

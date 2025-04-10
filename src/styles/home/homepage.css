@@ -1,0 +1,46 @@
+.hero-section-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.home {
+  @apply min-h-screen bg-white;
+}
+
+.content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.headline {
+  @apply hero-section-home flex items-center justify-center;
+}
+
+.project-card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl;
+}
+
+.section {
+  @apply mt-20;
+}
+
+.section-underline {
+  @apply w-24 h-1 bg-indigo-600 mx-auto mb-12 mt-4;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

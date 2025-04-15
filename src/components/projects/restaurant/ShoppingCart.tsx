@@ -1,11 +1,11 @@
 import { Add, Delete, Remove } from '@mui/icons-material';
 import { CartItem, CartState } from '../../../types/restaurant/types';
 import {
+  addToCart,
   clearCart,
-  decrease,
-  increase,
   removeFromCart,
 } from '../../../redux/projects/restaurant/CartSlice';
+import { useAppDispatch, useAppSelector } from '../../../redux/globalStore';
 import {
   Box,
   Button,
@@ -19,14 +19,13 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 interface ItemCardProps {
   item: CartItem;
 }
 
 const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <Card key={item.recipe.id} sx={{ mb: 2 }}>
@@ -49,14 +48,18 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
             >
               <IconButton
                 size='small'
-                onClick={() => dispatch(increase((item.recipe.id, 1)))}
+                onClick={() =>
+                  dispatch(addToCart({ recipe: item.recipe, quantity: -1 }))
+                }
               >
                 <Remove />
               </IconButton>
               <Typography sx={{ mx: 2 }}>{item.quantity}</Typography>
               <IconButton
                 size='small'
-                onClick={() => dispatch(decrease((item.recipe.id, 1)))}
+                onClick={() =>
+                  dispatch(addToCart({ recipe: item.recipe, quantity: 1 }))
+                }
               >
                 <Add />
               </IconButton>
@@ -75,8 +78,9 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
   );
 };
 
-const ShoppingCart = (cartState: CartState) => {
-  const dispatch = useDispatch();
+const ShoppingCart = () => {
+  const cartState: CartState = useAppSelector((state) => state.project.cart);
+  const dispatch = useAppDispatch();
   const handleCheckout = () => {
     alert('Thank you for your order!');
     dispatch(clearCart());
@@ -90,7 +94,7 @@ const ShoppingCart = (cartState: CartState) => {
       <Grid container spacing={4}>
         <Grid item md={8}>
           {Object.values(cartState.items).map((item) => (
-            <ItemCard item={item} />
+            <ItemCard key={item.recipe.id} item={item} />
           ))}
         </Grid>
         <Grid item xs={12} md={4}>

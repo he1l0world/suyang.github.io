@@ -9,12 +9,12 @@ jest.mock('../../redux/globalStore', () => ({
 describe('restaurant utils', () => {
   const dummyRecipes = [
     {
-      id: '1',
+      id: 1,
       name: 'Pasta',
       price: 10.99,
     },
     {
-      id: '2',
+      id: 2,
       name: 'Salad',
       price: 8.99,
     },
@@ -34,12 +34,12 @@ describe('restaurant utils', () => {
   });
 
   it('should find recipe by id', () => {
-    const find = findRecipeById('1');
+    const find = findRecipeById(1);
     expect(find).toEqual(dummyRecipes[0]);
   });
 
   it('should return undefined for non-existing id', () => {
-    const find = findRecipeById('3');
+    const find = findRecipeById(3);
     expect(find).toBeUndefined();
   });
 });

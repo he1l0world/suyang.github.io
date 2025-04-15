@@ -3,6 +3,7 @@ import cartReducer from './projects/restaurant/CartSlice';
 import userReducer from './global/UserSlice';
 import themeReducer from './global/ThemeSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const projectReducer = combineReducers({
   recipes: recipesReducer,
@@ -19,5 +20,6 @@ const globalStore = configureStore({
 
 export type RootState = ReturnType<typeof globalStore.getState>;
 export type AppDispatch = typeof globalStore.dispatch;
-
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export default globalStore;

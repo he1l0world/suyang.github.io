@@ -2,6 +2,7 @@ import AppTheme from './components/home/AppTheme';
 import HomePage from './components/home/HomePage';
 import ProjectsPage from './components/home/ProjectsPage';
 import RestaurantHome from './components/projects/restaurant/RestaurantHome';
+import ShoppingCart from './components/projects/restaurant/ShoppingCart';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -41,6 +42,7 @@ const App = () => {
               <Route path='/projects'>
                 <Route index element={<ProjectsPage />} />
                 <Route path='restaurant' element={<RestaurantHome />} />
+                <Route path='cart' element={<ShoppingCart/>}/>
               </Route>
             </Routes>
           </div>

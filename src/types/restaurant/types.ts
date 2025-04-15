@@ -18,10 +18,10 @@ export interface RecipeState {
 export interface CartItem {
   recipe: Recipe;
   quantity: number; // Quantity of the recipe in the cart
-  comments: string; // User comments or notes about the recipe
 }
 
 export interface CartState {
-  items: { [key: string]: CartItem }; // Dictionary of CartItemValue objects
+  items: { [key: number]: CartItem }; // Dictionary of CartItemValue objects
   totalPrice: number; // Total price of items in the cart
+  comments?: string;
 }

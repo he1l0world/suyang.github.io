@@ -1,5 +1,4 @@
-import { CartItem, CartState } from '../../../types/restaurant/types';
-import { findRecipeById } from '../../../utils/restaurant/RestaurantUtils';
+import { CartState, Recipe } from '../../../types/restaurant/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: CartState = {
@@ -11,29 +10,23 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState: initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<CartItem>) => {
-      const { recipe, quantity, comments } = action.payload;
+    addToCart: (
+      state,
+      action: PayloadAction<{ recipe: Recipe; quantity: number }>,
+    ) => {
+      const { recipe, quantity } = action.payload;
       const id = recipe.id;
-      if (id in state) {
-        state.items[id].quantity += 1;
+      if (id in state.items) {
+        state.items[id].quantity += quantity;
       } else {
-        state.items[id] = { recipe, quantity, comments };
+        state.items[id] = { recipe, quantity };
       }
 
-      state.totalPrice += quantity * (findRecipeById(id)?.price ?? 0);
-    },
-    increase: (state, action: PayloadAction<number>) => {
-      const id = action.payload;
-      state.items[id].quantity += 1;
-      state.totalPrice += state.items[id].recipe.price;
-    },
-    decrease: (state, action: PayloadAction<number>) => {
-      const id = action.payload;
-      state.items[id].quantity -= 1;
-      state.totalPrice -= state.items[id].recipe.price;
       if (state.items[id].quantity === 0) {
         delete state.items[id];
       }
+      state.totalPrice += quantity * recipe.price;
+      state.totalPrice = Math.max(0, state.totalPrice); // make sure the total price never go below 0
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       const id = action.payload;
@@ -48,6 +41,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, increase, decrease, removeFromCart, clearCart } =
-  cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -16,12 +16,12 @@ export interface RecipeState {
 }
 
 export interface CartItem {
-  recipeId: number; // ID of the recipe
+  recipe: Recipe;
   quantity: number; // Quantity of the recipe in the cart
   comments: string; // User comments or notes about the recipe
 }
 
 export interface CartState {
-  items: CartItem[]; // Array of Recipe objects
+  items: { [key: string]: CartItem }; // Dictionary of CartItemValue objects
   totalPrice: number; // Total price of items in the cart
 }

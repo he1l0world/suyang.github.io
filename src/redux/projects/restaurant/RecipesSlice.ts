@@ -1,7 +1,6 @@
+import { initialRecipes } from '../../../components/projects/restaurant/resources/Recipes';
 import { Recipe, RecipeState } from '../../../types/restaurant/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-const initialRecipes: Recipe[] = [];
 
 const initialState: RecipeState = {
   recipes: initialRecipes,

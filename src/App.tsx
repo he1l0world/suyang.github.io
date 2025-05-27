@@ -4,7 +4,7 @@ import ProjectsPage from './components/home/ProjectsPage';
 import RestaurantHome from './components/projects/restaurant/RestaurantHome';
 import ShoppingCart from './components/projects/restaurant/ShoppingCart';
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
@@ -35,7 +35,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <AppTheme>
-        <HashRouter>
+        <BrowserRouter>
           <div className='min-h-screen bg-gray-50'>
             <Routes>
               <Route path='/' element={<HomePage />} />
@@ -46,7 +46,7 @@ const App = () => {
               </Route>
             </Routes>
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </AppTheme>
     </ThemeProvider>
   );

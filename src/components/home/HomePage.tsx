@@ -1,6 +1,6 @@
 import SocialLinks from './SocialLinks';
 import '../../styles/home/homepage.css';
-import ProjectSection from './ProjectSection';
+// import ProjectSection from './ProjectSection';
 import React from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
 
@@ -52,17 +52,17 @@ const AboutMe = () => {
   );
 };
 
-const Projects = () => {
-  return (
-    <Box className='section'>
-      <Typography variant='h4' fontWeight='bold'>
-        Featured Projects
-      </Typography>
-      <Box className='section-underline' />
-      <ProjectSection />
-    </Box>
-  );
-};
+// const Projects = () => {
+//   return (
+//     <Box className='section'>
+//       <Typography variant='h4' fontWeight='bold'>
+//         Featured Projects
+//       </Typography>
+//       <Box className='section-underline' />
+//       <ProjectSection />
+//     </Box>
+//   );
+// };
 
 const HomePage = () => {
   return (
@@ -73,7 +73,7 @@ const HomePage = () => {
       <Box>
         <Container className='content'>
           <AboutMe />
-          <Projects />
+          {/* <Projects /> */}
         </Container>
       </Box>
     </Box>
